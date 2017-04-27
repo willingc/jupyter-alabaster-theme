@@ -42,11 +42,10 @@ def setup(app):
     # Register our custom search page
     if not hasattr(app.config, 'html_additional_pages'):
         app.config.html_additional_pages = {}
-    app.config.html_additional_pages['custom_search'] = 'custom_search.html'
+    app.config.html_additional_pages['custom_search'] = ['custom_search.html']
 
     # Adjust the last updated format
     app.config.html_last_updated_fmt = "%a, %b %d, %Y"
 
     return {'version': __version__,
             'parallel_read_safe': True}
-
